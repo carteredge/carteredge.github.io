@@ -2,10 +2,11 @@
 
 #theEngine {
     background-color: transparent;
-    height: 100px;
-    width: 125px;
-    position: relative;
     border: 0 none transparent;
+    height: 100px;
+    margin: 0;
+    position: relative;
+    width: 125px;
 }
 
 #chimney-1, #chimney-2, #cloud-1, #cloud-2, #cloud-3, #engine,

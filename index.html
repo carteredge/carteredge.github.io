@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Carter Edge dot dev</title>
+  <meta name="description" content="The personal website of Carter Edge">
+  <meta name="keywords" content="software, engineer, code, html, javascript">
+  <meta name="author" content="Carter Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/media/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/media/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/media/icons/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <script src="/js/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="mailto:carteredge.dev@gmail.com">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-boi">
+            <div>
+                <img alt="Robot logo" class="header-img" src="/media/io_bot.png"/>
+            </div>
+            <div>
+                <h1>
+                    Carter Edge
+                    <span class="smol-boi">. DEV</span>
+                </h1>
+                <p class="smol-boi">Software Engineer, Tinkerer, Freelance Wizard</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li class="active">
+                <span class="a">Things I Make</span>
+            </li>
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+            <!-- <li>
+                <a href="">Blog (coming eventually)</a>
+            </li> -->
+        </ul>
+    </nav>
+    <section>
+        <div>
+            <h1>Things I Make</h1>
+            <!-- <h2>Code</h2> -->
+            <ul class="main-list">
+                <li class="row">
+                    <button id="theEngine" onclick="engineClick()">
+                        <img alt="" id="engine-background" src="/media/ee/background-0_25.png"/>
+                        <img alt="" id="chimney-1" src="/media/ee/chimney-0_25.png"/>
+                        <img alt="" id="chimney-2" src="/media/ee/chimney-0_25.png"/>
+                        <img alt="Endless Engine logo" id="engine" src="/media/ee/engine-0_25.png"/>
+                        <img alt="" id="gear" src="/media/ee/gear-0_25.png"/>
+                        <img alt="" id="gear-center" src="/media/ee/gear-center-0_25.png"/>
+                        <img alt="" id="gear-shadow" src="/media/ee/gear-shadow-0_25.png"/>
+                        <img alt="" id="infinity" src="/media/ee/infinity-0_25.png"/>
+                        <img alt="Cloud dragon" id="cloud-1" src="/media/ee/cloud-1-0_5.png"/>
+                        <img alt="Cloud castle" id="cloud-2" src="/media/ee/cloud-2-0_5.png"/>
+                        <img alt="Cloud knight" id="cloud-3" src="/media/ee/cloud-3-0_5.png"/>
+                    </button>
+                    <div>
+                        <h3><a href="/endless-engine/index.html">The Endless Engine</a></h3>
+                        <span>A data-driven, recursive randomizer (and a demonstration fantasy character generator).</span>
+                    </div>
+                </li>
+                <li>
+                    <div id="crumbler">
+                        <h3><a href="/markdown-crumbler/index.html">Markdown Crumbler</a></h3>
+                        <span>A markdown-to-html converter with directory-based breadcrumb navigation and element src/href file path correction.</span>
+                    </div>
+                </li>
+                <li class="row">
+                    <div id="doodleBox">
+                        <img alt="BS Paint" class="project-icon" src="/media/bs.png"/>
+                        <canvas id="doodler" width="97" height="128"></canvas>
+                    </div>
+                    <div>
+                        <h3><a href="/bspaint/index.html">BS Paint</a></h3>
+                        <span>(Warning: NSFW language.) Something I made to learn about canvas elements.</span>
+                    </div>
+                </li>
+            </ul>
+            <!-- <h2>Other Stuff</h2> -->
+        </div>
+    </section>
+    <footer>
+        <small>Robot logo &copy; 2021 Carter Edge. All other content is under the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License v3.0</a> unless otherwise noted.</small>
+        <div class="coffee-btn">
+            <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="carteredge" data-color="#5F7FFF" data-emoji="☕"  data-font="Lato" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+        </div>
+    </footer>
+</body>
+</html>

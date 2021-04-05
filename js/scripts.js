@@ -65,28 +65,27 @@ class Doodler {
     }
 
     doodle(event) {
-        let p;
+        let p, x, y;
         switch (event.type) {
             case "mousedown":
             case "mouseup":
-                p = this.convertCoordinates(
-                    event.clientX,
-                    event.clientY);
+                    x = event.clientX;
+                    y = event.clientY;
                 break;
             case "touchstart":
-                p = this.convertCoordinates(
-                    event.touches?.[0]?.clientX,
-                y = event.touches?.[0]?.clientY);
+                    x = event.touches?.[0]?.clientX;
+                    y = event.touches?.[0]?.clientY;
                 break;
             case "touchend":
-                p = this.convertCoordinates(
-                    this.currentMouse.x,
-                    this.currentMouse.y);
+                    x = this.currentMouse.x;
+                    y = this.currentMouse.y;
                 break;
         }
+
+        p = this.convertCoordinates(x, y);
         if (this.canvasContext) {
             if (event.type === "mousedown" || event.type === "touchstart") {
-                if (this.isInBox(p.x, p.y)) {
+                if (this.isInBox(x, y)) {
                     this.mousedown = {x: p.x, y: p.y};
                     this.currentMouse = {x: p.x, y: p.y};
                     this.previousMouse = {x: p.x, y: p.y};

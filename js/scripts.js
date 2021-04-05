@@ -65,28 +65,31 @@ class Doodler {
     }
 
     doodle(event) {
-        let x, y;
+        let p;
         switch (event.type) {
             case "mousedown":
             case "mouseup":
-                x = event.clientX;
-                y = event.clientY;
+                p = this.convertCoordinates(
+                    event.clientX,
+                    event.clientY);
                 break;
             case "touchstart":
-                x = event.touches?.[0]?.clientX;
-                y = event.touches?.[0]?.clientY;
+                p = this.convertCoordinates(
+                    event.touches?.[0]?.clientX,
+                y = event.touches?.[0]?.clientY);
                 break;
             case "touchend":
-                x = this.currentMouse.x;
-                y = this.currentMouse.y;
+                p = this.convertCoordinates(
+                    this.currentMouse.x,
+                    this.currentMouse.y);
                 break;
         }
         if (this.canvasContext) {
             if (event.type === "mousedown" || event.type === "touchstart") {
-                if (this.isInBox(x, y)) {
-                    this.mousedown = {x, y};
-                    this.currentMouse = {x, y};
-                    this.previousMouse = {x, y};
+                if (this.isInBox(p.x, p.y)) {
+                    this.mousedown = {x: p.x, y: p.y};
+                    this.currentMouse = {x: p.x, y: p.y};
+                    this.previousMouse = {x: p.x, y: p.y};
                     this.canvasContext.strokeStyle = Doodler.randomColor();
                     clearInterval(this.penInterval);
                     this.penInterval = setInterval(this.penDraw, 10);

@@ -154,7 +154,7 @@ li:is(.row, .project-row) > div {
 
 #doodleBox {
     flex: 0 1;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     position: relative;
     touch-action: none;
@@ -169,6 +169,10 @@ li:is(.row, .project-row) > div {
 @media only screen and (min-width: 550px) {
     li.project-row {
         flex-direction: row;
+    }
+
+    #doodleBox {
+        margin-right: 24px;
     }
 
     #crumbler {

@@ -146,24 +146,6 @@ li:is(.row, .project-row) > div {
     font-size: 0.8em;
 }
 
-@media only screen and (min-width: 550px) {
-    li.project-row {
-        flex-direction: row;
-    }
-
-    #crumbler {
-        background: url("/media/crumbs.png") bottom right no-repeat;
-        padding-bottom: 36px;
-        padding-right: 112px;
-    }
-        
-    .header-boi {
-        align-items: flex-end;
-        flex-direction: row;
-        justify-content: flex-start;
-    }
-}
-
 #crumbler {
     background: url("/media/crumbs.png") bottom right / contain no-repeat;
     padding-bottom: 72px;
@@ -182,4 +164,22 @@ li:is(.row, .project-row) > div {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@media only screen and (min-width: 550px) {
+    li.project-row {
+        flex-direction: row;
+    }
+
+    #crumbler {
+        background: url("/media/crumbs.png") bottom right no-repeat;
+        padding-bottom: 36px;
+        padding-right: 112px;
+    }
+        
+    .header-boi {
+        align-items: flex-end;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 }

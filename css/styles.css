@@ -127,13 +127,17 @@ ul {
     width: auto;
 }
 
-li.row {
+li:is(.row, .project-row) {
     align-items: center;
     display: flex;
     flex-direction: row;
 }
 
-li.row > div {
+li.project-row {
+    flex-direction: column;
+}
+
+li:is(.row, .project-row) > div {
     flex: 1;
 }
 
@@ -143,6 +147,16 @@ li.row > div {
 }
 
 @media only screen and (min-width: 550px) {
+    li.project-row {
+        flex-direction: row;
+    }
+
+    #crumbler {
+        background: url("/media/crumbs.png") bottom right no-repeat;
+        padding-bottom: 36px;
+        padding-right: 112px;
+    }
+        
     .header-boi {
         align-items: flex-end;
         flex-direction: row;
@@ -151,9 +165,9 @@ li.row > div {
 }
 
 #crumbler {
-    background: url("../media/crumbs.png") bottom right no-repeat;
-    padding-bottom: 36px;
-    padding-right: 112px;
+    background: url("/media/crumbs.png") bottom right / contain no-repeat;
+    padding-bottom: 72px;
+    padding-right: 0;
 }
 
 #doodleBox {
@@ -161,6 +175,7 @@ li.row > div {
     margin: 0;
     padding: 0;
     position: relative;
+    touch-action: none;
 }
 
 #doodler {

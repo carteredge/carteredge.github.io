@@ -32,9 +32,14 @@ class Doodler {
         this.penDraw = this.penDraw.bind(this);
         document.addEventListener("mousedown", this.doodle);
         document.addEventListener("mouseup", this.doodle);
-        document.onmousemove = (event) => {
+        document.addEventListener("mousemove", (event) => {
 			this.currentMouse = this.convertCoordinates(event.clientX, event.clientY, this.canvas);
-		};
+		});
+        document.addEventListener("touchstart", this.doodle);
+        document.addEventListener("touchend", this.doodle);
+        document.addEventListener("touchmove", (event) => {
+            this.currentMouse = this.convertCoordinates(event.touches[0]?.clientX, event.touches[0]?.clientY);
+        });
     }
 
     set canvas(c) {
@@ -60,15 +65,28 @@ class Doodler {
     }
 
     doodle(event) {
+        let x, y;
+        switch (event.type) {
+            case "mousedown":
+            case "mouseup":
+                x = event.clientX;
+                y = event.clientY;
+                break;
+            case "touchstart":
+                x = event.touches?.[0]?.clientX;
+                y = event.touches?.[0]?.clientY;
+                break;
+            case "touchend":
+                x = this.currentMouse.x;
+                y = this.currentMouse.y;
+                break;
+        }
         if (this.canvasContext) {
-            if (event.type === "mousedown") {
-                console.log(this.isInBox(event.clientX, event.clientY));
-                if (this.isInBox(event.clientX, event.clientY)) {
-                    this.mousedown = {x: event.clientX, y: event.clientY};
-                    this.previousMouse = {
-                        x: this.currentMouse.x,
-                        y: this.currentMouse.y
-                    };
+            if (event.type === "mousedown" || event.type === "touchstart") {
+                if (this.isInBox(x, y)) {
+                    this.mousedown = {x, y};
+                    this.currentMouse = {x, y};
+                    this.previousMouse = {x, y};
                     this.canvasContext.strokeStyle = Doodler.randomColor();
                     clearInterval(this.penInterval);
                     this.penInterval = setInterval(this.penDraw, 10);

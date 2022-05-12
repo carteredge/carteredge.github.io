@@ -148,7 +148,7 @@ li:is(.row, .project-row) > div {
 
 #crumbler {
     background: url("/media/crumbs.png") bottom right / contain no-repeat;
-    padding-bottom: 72px;
+    padding-bottom: 88px;
     padding-right: 0;
 }
 
@@ -166,6 +166,19 @@ li:is(.row, .project-row) > div {
     left: 0;
 }
 
+@media only screen and (min-width: 355px) {
+    #crumbler {
+        background: url("/media/crumbs.png") bottom right no-repeat;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #crumbler {
+        padding-bottom: 36px;
+        padding-right: 112px;
+    }
+}
+
 @media only screen and (min-width: 550px) {
     li.project-row {
         flex-direction: row;
@@ -173,12 +186,6 @@ li:is(.row, .project-row) > div {
 
     #doodleBox {
         margin-right: 24px;
-    }
-
-    #crumbler {
-        background: url("/media/crumbs.png") bottom right no-repeat;
-        padding-bottom: 36px;
-        padding-right: 112px;
     }
         
     .header-boi {
